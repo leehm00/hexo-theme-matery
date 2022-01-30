@@ -160,6 +160,8 @@ layout: "friends"
 ---
 ```
 
+todo 
+
 同时，在你的博客 `source` 目录下新建 `_data` 目录，在 `_data` 目录中新建 `friends.json` 文件，文件内容如下所示：
 
 ```json
@@ -302,6 +304,10 @@ prismjs:
   tab_replace: ''
 ```
 
+
+
+todo
+
 主题中默认的 `prismjs` 主题是 `Tomorrow Night`，如果你想定制自己的主题，可以前往 [prismjs 下载页面](https://prismjs.com/download.html) 定制下载自己喜欢的主题 `css` 文件，然后将此 css 主题文件取名为 `prism.css`，替换掉 `hexo-theme-matery` 主题文件夹中的 `source/libs/prism/prism.css` 文件即可。
 
 ### 搜索
@@ -415,6 +421,8 @@ feed:
 前往 [Tidio](https://www.tidio.com/) 官网注册并且获取 `Public Key`，并将 `Public Key` 填入主题的 `_config.yml` 文件中。
 
 ### 修改页脚
+
+todo
 
 页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 `/layout/_partial/footer.ejs` 文件中，包括站点、使用的主题、访问量等。
 
