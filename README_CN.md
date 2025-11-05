@@ -21,6 +21,7 @@ QQ 交流群1（已满）: [`926552981`](https://jq.qq.com/?_wv=1027&k=5zMDYHT) 
 - 可自定义的数据的友情链接页面
 - 支持文章置顶和文章打赏
 - 支持 `MathJax`
+- 支持中文繁简转换
 - `TOC` 目录
 - 可设置复制文章内容时追加版权信息
 - 可设置阅读文章时做密码验证
@@ -187,13 +188,7 @@ todo
 ```
 ### 新建 404 页
 
-如果在你的博客 `source` 目录下还没有 `404.md` 文件，那么你就需要新建一个
-
-```bash
-hexo new page 404
-```
-
-编辑你刚刚新建的页面文件 `/source/404/index.md`，至少需要以下内容：
+如果在你的博客 `source` 目录下还没有 `404.md` 文件，那么你就需要新建一个。编辑你刚刚新建的页面文件 `/source/404.md`，至少需要以下内容：
 
 ```yaml
 ---
@@ -426,6 +421,18 @@ todo
 
 页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 `/layout/_partial/footer.ejs` 文件中，包括站点、使用的主题、访问量等。
 
+### 添加中文繁简转换
+
+在主题的 `_config.yml` 文件中，开启 translate 为 enable。
+
+> 开启中文繁简转换如下修改。默认不开启。 
+> 实例演示： [繁简转换](https://blog.17lai.site) 底下 footer 栏
+
+```yaml
+translate:
+  enable: true
+```
+
 ### 修改社交链接
 
 在主题的 `_config.yml` 文件中，默认支持 `QQ`、`GitHub` 和邮箱等的配置，你可以在主题文件的 `/layout/_partial/social-link.ejs` 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：
@@ -492,6 +499,60 @@ music:
 >
 > 即为这串数字。
 
+### 添加note
+
+> [演示](https://blog.17lai.site/posts/cf0f47fd/#tag-note)
+
+#### Usage
+
+```
+{% note [class] [no-icon] [summary] %}
+Any content (support inline tags too).
+{% endnote %}
+```
+
+- `[class]` : *Optional parameter.* Supported values: default | primary | success | info | warning | danger.
+- `[no-icon]` : *Optional parameter.* Disable icon in note.
+- `[summary]` : *Optional parameter.* Optional summary of the note.
+
+All parameters are optional.
+
+#### example
+
+```
+{% note %}
+#### Header
+(without define class style)
+{% endnote %}
+```
+
+### 添加button
+
+> [演示](https://blog.17lai.site/posts/cf0f47fd/#tag-button)
+
+#### Usage
+
+```
+{% button url, text, icon [class], [title] %}
+```
+
+or
+
+```
+{% btn url, text, icon [class], [title] %}
+```
+
+- `url` : Absolute or relative path to URL.
+- `text` : Button text. Required if no icon specified.
+- `icon` : Font Awesome icon name. Required if no text specified.
+- `[class]` : *Optional parameter.* Font Awesome class(es): `fa-fw` | `fa-lg` | `fa-2x` | `fa-3x` | `fa-4x` | `fa-5x`
+- `[title]` : *Optional parameter.* Tooltip at mouseover.
+
+#### Examples
+
+```
+{% button #, Text %}
+```
 
 
 ## 文章 Front-matter 介绍
@@ -628,3 +689,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 ## 版本变更记录
 
 参见 [CHANGELOG.md](https://github.com/blinkfox/hexo-theme-matery/blob/master/CHANGELOG.md)
+
+## 更多部署方式
+
+> Jsdelivr 已经被封了，这两个可以加速访问快一点
+
+### [vercel 部署](https://blog.17lai.site/posts/5311b619/#vercel-%E9%83%A8%E7%BD%B2)
+
+### [cloudflare Pages 部署](https://blog.17lai.site/posts/5311b619/#cloudflare-Pages-%E9%83%A8%E7%BD%B2)
+
